@@ -24,7 +24,8 @@ def make_courses
 end 
 
   def print_courses
-    self.make_courses.each do |course|
+    self.make_courses
+    Course.all.each do |course|
       if course.title
         puts "Title: #{course.title}"
         puts "  Schedule: #{course.schedule}"
@@ -32,7 +33,7 @@ end
       end
     end
   end
-
+Scraper.new.print_courses
 end
 
 
