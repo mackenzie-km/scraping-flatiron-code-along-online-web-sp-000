@@ -15,7 +15,8 @@ self.get_page.css(".post")
 end 
 
 def make_courses
-     doc.css(".post").each do |post|
+ doc = get_courses 
+     doc.each do |post|
       course = Course.new
       course.title = post.css("h2").text
       course.schedule = post.css(".date").text
